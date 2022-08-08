@@ -38,6 +38,7 @@ const indexCalculate = (w, h) => {
     color = "#dc3545";
   }
   showResultBar(bmi, percent, color);
+  backgroundChange(color);
   return `<b>Your body mass index is:</b> ${index} <br/> Your result suggests you are <b>${bmi}</b>`;
 };
 {
@@ -45,12 +46,6 @@ const indexCalculate = (w, h) => {
   sarı #ffc107
 yeşil #28a745
 kırmızı #dc3545
-
-
-
-<div class="myProgress">
-  <div class="myBar"></div>
-</div>
 */
 }
 const calculateBtn = () => {
@@ -79,4 +74,17 @@ const showResultBar = (bmi, percent, color) => {
   );
   myBar.innerHTML = `${bmi}`;
   myProgress.append(myBar);
+};
+
+const backgroundChange = (color) => {
+  if (color === "#ffc107") {
+    document.querySelector("body").style.backgroundImage =
+      "linear-gradient(to bottom left, #ffcb1c 9%, #ff6732 94%)";
+  } else if (color === "#28a745") {
+    document.querySelector("body").style.backgroundImage =
+      "linear-gradient(to bottom left, #0fe475 15%, #08b2b4 85%)";
+  } else if (color === "#dc3545") {
+    document.querySelector("body").style.backgroundImage =
+      "linear-gradient(to bottom left, #ff0d46 9%, #ff6732 64%)";
+  }
 };
