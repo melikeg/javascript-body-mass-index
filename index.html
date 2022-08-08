@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>BMI Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div><h1 class="title">BMI Calculator</h1></div>
+      <div class="boxes">
+        <div class="left_box">
+          <div class="inputs">
+            <span>Weight (kg)</span>
+            <input type="number" id="weight" />
+            <span>Height (cm)</span>
+            <input type="number" id="height" />
+            <div class="btnContainer">
+              <button class="btn" onclick="calculateBtn()">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <div class="right_box">
+          <img
+            src="https://nutrition.health.gov.lk/wp-content/themes/wp-bootstrap-4-idealsot/assets/img/BMI.png"
+            alt="body mass index"
+            width="500px"
+          />
+          <p id="result" class="result"></p>
+          <div id="result_bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
