@@ -51,7 +51,12 @@ kırmızı #dc3545
 const calculateBtn = () => {
   const weight = document.getElementById("weight").value;
   const height = document.getElementById("height").value;
+
   const result = indexCalculate(weight, height);
+
+  const footer = document.getElementById("footer");
+  footer.style.height = "30vh";
+
   document.getElementById("result").innerHTML = result;
 };
 
@@ -72,6 +77,7 @@ const showResultBar = (bmi, percent, color) => {
     "style",
     `width: ${percent}%;height: 30px;background-color: ${color};text-align: center;line-height: 30px;color: white;border-radius: 5px;`
   );
+  myBar.setAttribute("class", "myBar");
   myBar.innerHTML = `${bmi}`;
   myProgress.append(myBar);
 };

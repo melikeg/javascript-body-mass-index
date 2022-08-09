@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
     <title>BMI Calculator</title>
   </head>
   <body>
     <div class="container">
-      <div><h1 class="title">BMI Calculator</h1></div>
-      <div class="boxes">
+      <header><h1 class="title">Body Mass Index Calculator</h1></header>
+      <section class="boxes">
         <div class="left_box">
           <div class="inputs">
             <span>Weight (kg)</span>
@@ -23,16 +27,25 @@
           </div>
         </div>
         <div class="right_box">
-          <img
-            src="./img/ezgif.com-gif-maker_1.gif"
-            alt="body mass index"
-            width="200px"
-          />
-          <p id="result" class="result"></p>
-          <div id="result_bar"></div>
+          <img src="./img/bmibg.png" alt="body mass index" />
         </div>
-      </div>
+      </section>
     </div>
+    <footer id="footer">
+      <p id="result" class="result"></p>
+      <div id="result_bar"></div>
+      <ul>
+        <li>Designed by Melike Görgülü</li>
+        <li>
+          <a href="https://github.com/melikeg/javascript-body-mass-index"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/melike-gorgulu/"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
 
     <script src="./main.js"></script>
   </body>
