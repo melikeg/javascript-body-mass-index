@@ -41,6 +41,7 @@ header {
 }
 .left_box {
   width: 100%;
+  height: 35vh;
   margin: auto;
 }
 .inputs {
@@ -48,8 +49,9 @@ header {
   flex-direction: column;
   justify-content: space-around;
   margin: auto;
-  width: 300px;
-  height: 250px;
+  align-items: center;
+  width: 70%;
+  height: 40vh;
   padding: 10px;
 }
 
@@ -87,9 +89,24 @@ input[type="number"]:focus {
 .btn:hover {
     background-color: rgba(255, 255, 255, 0.689);
 }
-
+.alert {
+  width: 70%;
+  height: 6vh;
+  border: none;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.568);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 3px;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
 .right_box {
   width: 100%;
+  height: 50vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -97,10 +114,10 @@ input[type="number"]:focus {
 }
 .right_box img {
     margin: auto ;
-    width: 400px;
+    width: 80%;
+    margin-bottom: 5vh;
 }
 .result {
-  
   font-size: 18px;
   text-align: center;
 }
@@ -117,13 +134,16 @@ footer {
   background-color: rgba(255, 255, 255, 0.568); 
   box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.75);
   display: flex;
+  justify-content:center;
   flex-direction: column;
   transition: height 2s;
 }
-/* footer:hover {
-  
-  height: 30vh;
-} */
+footer .footer-container{
+  height:5vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between
+}
 footer ul {
   display: flex;
   justify-content: space-evenly;  
@@ -137,10 +157,21 @@ footer ul li .fa-brands {
   font-size: 30px;
 }
 
-
-@media (max-width:800px) {
+@media (max-width:1035px) {
+  .alert{
+    font-size: 12px;
+    height: 8vh;
+  }
+}
+@media (max-width:1170px) {
   .right_box img {
     width: 350px;
+  }
+}
+@media (max-width:1000px) {
+  .right_box img {
+    width: 300px;
+    margin-bottom: 60px;
   }
 }
 @media (max-width:770px) {
@@ -162,16 +193,17 @@ footer ul li .fa-brands {
     height: 60vh;
   }
   .left_box{
-    height: 30vh;
+    height: 25vh;
     width: 80%;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
   }
   .right_box{
     height: 30vh;
     width: 80%;
   }
   .right_box img{
-    width: 280px;
+    width: 250px;
+    margin-bottom: 20px;
   }
 
   footer ul li{

@@ -1,3 +1,7 @@
+const w = document.getElementById("weight");
+const h = document.getElementById("height");
+const alertDOM = document.getElementById("alert");
+
 const indexCalculate = (w, h) => {
   const massIndex = w / ((h / 100) * (h / 100));
   const index = Math.round(massIndex * 100) / 100;
@@ -41,23 +45,28 @@ const indexCalculate = (w, h) => {
   backgroundChange(color);
   return `<b>Your body mass index is:</b> ${index} <br/> Your result suggests you are <b>${bmi}</b>`;
 };
-{
-  /* 
-  sarı #ffc107
-yeşil #28a745
-kırmızı #dc3545
-*/
-}
+
 const calculateBtn = () => {
-  const weight = document.getElementById("weight").value;
-  const height = document.getElementById("height").value;
+  const weight = Number(w.value);
+  const height = Number(h.value);
 
-  const result = indexCalculate(weight, height);
+  if (weight == "" && height == "") {
+    alertMessage("You did not enter a weight or height value.");
+  } else {
+    if (weight >= 350 || weight <= 0) {
+      alertMessage("The weight value should be between 0kg and 300kg.");
+    } else if (height > 250 || height < 30) {
+      alertMessage("The height value should be between 30cm and 250cm.");
+    } else {
+      const result = indexCalculate(weight, height);
 
-  const footer = document.getElementById("footer");
-  footer.style.height = "30vh";
+      const footer = document.getElementById("footer");
+      footer.style.height = "30vh";
+      document.querySelector(".footer-container").style.height = "25vh";
 
-  document.getElementById("result").innerHTML = result;
+      document.getElementById("result").innerHTML = result;
+    }
+  }
 };
 
 const showResultBar = (bmi, percent, color) => {
@@ -93,4 +102,13 @@ const backgroundChange = (color) => {
     document.querySelector("body").style.backgroundImage =
       "linear-gradient(to bottom left, #ff0d46 9%, #ff6732 64%)";
   }
+};
+
+const alertMessage = (message) => {
+  alertDOM.style.visibility = "visible";
+  alertDOM.innerHTML = message;
+
+  const myTimeout = setTimeout(() => {
+    alertDOM.style.visibility = "hidden";
+  }, 2000);
 };
